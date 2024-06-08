@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript one</title>
+</head>
+
+
+
+<body>
+
+    <h1 id="demo"></h1>
+
+    <script>
+ 
+    ///// ALERT ////
+    window.alert("Are You Sure TO CHANGE YOUR PASSWROD")
+   
+    ///// CONDITION CHYANGE PASSWORD////
+
+    const OLD_PASSWORD = 123
+    const NEW_PASSWORD = prompt("Enter new password")
+
+    if(OLD_PASSWORD == NEW_PASSWORD){
+
+        document.write('your password similar to old password please enter new Password');
+
+    }else{
+
+        document.write('your password is updated succefully , heare it is your password');      
+        let NEW_CONFIRM_PASSWORD  =  NEW_PASSWORD.valueOf = NEW_PASSWORD 
+        document.getElementById("demo").innerHTML = "Your updated Password is" + " " + NEW_CONFIRM_PASSWORD;
+    }
+         
+    </script>
+
+
+
+
+
+</body>
+</html>

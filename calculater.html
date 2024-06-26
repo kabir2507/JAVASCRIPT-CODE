@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    #key {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr 4fr;
+        padding: 10px;
+    }
+
+    #key .btn_round {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        margin: 7px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+    }
+
+    #key .btn_round:nth-child(4) {
+        color: white;
+        background-color: #e88200;
+    }
+
+    #key .btn_round:nth-child(8) {
+        color: white;
+        background-color: #e88200;
+    }
+
+    #key .btn_round:nth-child(12) {
+        color: white;
+        background-color: #e88200;
+    }
+
+    #key .btn_round:nth-child(16) {
+        color: white;
+        background-color: #e88200;
+    }
+
+    #key .btn_round:nth-child(13) {
+        color: white;
+        background-color: #e88200;
+    }
+
+    .box {
+        background: #212121;
+        height: 84px;
+        width: 91%;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 46px;
+        font-weight: bold;
+        padding: 0px 19px;
+    }
+</style>
+
+<body>
+
+
+    <!-- //////////////////////////////////   calculate ////////////////////////////////// -->
+
+    <input type="text" class="box" id="display">
+
+    <div id="calculater">
+      
+        <div id="key">
+
+            <button onclick="GET_value('7')" class="btn_round">7</button>
+            <button onclick="GET_value('8')" class="btn_round">8</button>
+            <button onclick="GET_value('9')" class="btn_round">9</button>
+            <button onclick="GET_value('*')" class="btn_round">*</button>
+
+            <button onclick="GET_value('4')" class="btn_round">4</button>
+            <button onclick="GET_value('5')" class="btn_round">5</button>
+            <button onclick="GET_value('6')" class="btn_round">6</button>
+            <button onclick="GET_value('-')" class="btn_round">-</button>
+
+
+            <button onclick="GET_value('1')" class="btn_round">1</button>
+            <button onclick="GET_value('2')" class="btn_round">2</button>
+            <button onclick="GET_value('3')" class="btn_round">3</button>
+            <button onclick="GET_value('+')" class="btn_round">+</button>
+
+            <button onclick="ZERO_value('AC')" class="btn_round">AC</button>
+            <button onclick="GET_value('0')" class="btn_round">0</button>
+            <button onclick="GET_value('.')" class="btn_round">.</button>
+            <button onclick="TOTAL('=')" class="btn_round">=</button>
+
+
+
+        </div>
+         
+    </div>
+
+
+    <script>
+        const display = document.getElementById('display');
+
+         function GET_value(input){
+           display.value +=  input;
+        }
+
+        function ZERO_value(){
+           display.value = "";
+        }
+    
+        function TOTAL() {
+            display.value = eval(display.value);
+        }
+    </script>
+
+
+    <!-- //////////////////////////////////   calculate ////////////////////////////////// -->
+ 
+
+
+</body>
+
+</html>

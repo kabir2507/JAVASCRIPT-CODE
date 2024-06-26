@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<style>
+       input {
+            width: 80%;
+            height: 30px;
+            padding: 0px 10px;
+        }
+
+        .btn {
+            margin-left: 10px;
+            width: 120px;
+            height: 36px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+</style>
+
+<body>
+
+    <div class="div">
+
+        <table id="myTable">
+            <tr>
+                <td><input type="text" value="0"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><button class="btn" onclick="add_row()">+ ADD</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+        let counter = 0;
+
+
+        function add_row() {
+
+            const table = document.getElementById("myTable");
+            const newRow = document.createElement("tr");
+
+
+            for (let i = 0; i < 3; i++) {
+                const newCell = document.createElement("td");
+                const newInput = document.createElement("input");
+                newInput.type = "text";
+                if (i == 0) {
+                    newInput.value = ++counter;
+                }
+                newCell.appendChild(newInput);
+                newRow.appendChild(newCell);
+            }
+
+            const buttonCell = document.createElement("td");
+            const newButton = document.createElement("button");
+            newButton.className = "btn";
+            newButton.textContent = "- Delete";
+            newButton.style = "background:red;";
+            newButton.onclick = function () {
+                const row = this.parentNode.parentNode;
+                table.removeChild(row);
+                update_sequence();
+
+            };
+            buttonCell.appendChild(newButton);
+
+            
+            newRow.appendChild(buttonCell);
+            table.appendChild(newRow);
+        }
+        function update_sequence() {
+                const rows = document.querySelectorAll('#myTable tr');
+                let count = 1;
+                rows.forEach(row => {
+                    row.cells[0].querySelector('input').value = count++;
+                });
+            }
+    </script>
+
+
+
+
+
+</body>
+
+</html>
